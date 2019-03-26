@@ -47,7 +47,7 @@ $sth4=$dbh->prepare($query4);
 $sth5=$dbh->prepare($query5);
 
 while(<$file>){
-    @line=split(/\t+/,$_);
+    @line=split(/\t/,$_);
     if ($line[0]=~/Entry/){
         next;
     }
