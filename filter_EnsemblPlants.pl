@@ -20,7 +20,7 @@ open my $out, '>:encoding(utf8)', 'mart_export_spliced.csv' or die "Cannot creat
  
 while (my $row = $csv->getline($in)) {
 
-    if (@$row[3] =~ /ND/i){
+    if (@$row[3] =~ /ND/i || @$row[2] =~ /ND/i){
         splice @$row;
     }
  
@@ -32,6 +32,7 @@ while (my $row = $csv->getline($in)) {
  
 close $in;
 close $out;
+
 
 
 
