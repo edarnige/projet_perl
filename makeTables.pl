@@ -65,7 +65,7 @@ open (my $fichier,"mart_export_spliced.csv");
 while (<$fichier>){
     @line=split(/,/,$_);
 
-    if ($line[0]=~/Gene Stable/){
+    if ($line[0]=~/Gene stable ID/){
         next;
     }
     $sth1_1->execute($line[2],$line[0],$line[1],$line[3]);
