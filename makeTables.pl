@@ -7,7 +7,7 @@ use DBI;
 my $dbh = DBI->connect("DBI:Pg:dbname=edarnige;
 host=dbserver", "edarnige", "Rockey11!", {'RaiseError' => 1});
 
-$dbh->do("create table UniProt(Entry varchar(200) primary key, Status varchar(200), Organism varchar(100), Length varchar(25000), GO varchar(50000))");
+$dbh->do("create table UniProt(Entry varchar(200) primary key, Status varchar(200), Organism varchar(100), Length int, GO varchar(50000))");
 $dbh->do("create table Uniprot_Plant( Uni_Trembl varchar(30), Gene_Stable varchar(200), Transcript varchar(25000), Plant_React varchar(50000), constraint key primary key (Uni_Trembl,Gene_Stable,Transcript,Plant_React))");
 $dbh->do("create table Uniprot_Entry(UniProt_ID varchar(25) primary key, Entry_Name varchar(200), Sequence varchar(20000))"); ###
 $dbh->do("create table Protein_UniProt(Protein_Name varchar(200000), UniProt_ID varchar(25) primary key)");
